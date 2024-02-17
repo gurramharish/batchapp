@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: file_upload_db
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=han
+      - POSTGRES_USER=han
+      - POSTGRES_DB=file-upload
+volumes:
+  pgdata:
